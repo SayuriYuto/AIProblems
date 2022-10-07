@@ -1,5 +1,4 @@
 import java.util.*;
-
 class Map {
     int width;
     int height;
