@@ -75,7 +75,7 @@ class Map {
     }
 }
 
-class Node {
+public class Node {
     int x;
     int y;
     int cost;

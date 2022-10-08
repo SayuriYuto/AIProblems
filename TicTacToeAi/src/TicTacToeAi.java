@@ -2,7 +2,7 @@
 import java.util.Scanner;
 import java.util.HashSet;
 
-class TicTacToeAi {
+public class TicTacToeAi {
 
     private Board board;
     private Scanner sc = new Scanner(System.in);

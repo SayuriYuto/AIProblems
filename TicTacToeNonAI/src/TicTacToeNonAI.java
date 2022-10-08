@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Tester {
+public class TicTacToeNonAI {
     static int[][] board = { { 2, 2, 2 }, { 2, 2, 2 }, { 2, 2, 2 } };
     static int userinput;
     static int[] steps = new int[9];
@@ -83,7 +83,6 @@ class Tester {
             pos = pos + 5;
             go(pos);
         }
-        sc.close();
     }
 
     static int bestmov() {
