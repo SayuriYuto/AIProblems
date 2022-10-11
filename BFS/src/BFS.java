@@ -12,7 +12,7 @@ class Node {
 
     int calculateDistance(Map map) {
         double x = (this.x - map.goal.x) * (this.x - map.goal.x);
-        double y = (this.y + map.goal.y) * (this.y + map.goal.y);
+        double y = (this.y - map.goal.y) * (this.y - map.goal.y);
         return (int)Math.sqrt(x + y);
     }
 
@@ -61,22 +61,8 @@ class Node {
         return (this.x == n.x) && (this.y == n.y);
     }
 
-    @Override
-    public boolean equals(Object rhs) {
-        if (this == rhs) {
-            return true;
-        } else if (rhs == null) {
-            return false;
-        } else if (rhs instanceof Node) {
-            Node tmp = (Node) rhs;
-            return this.x == tmp.x
-                    && this.y == tmp.y
-                    && this.heuristic_cost == tmp.heuristic_cost;
-        }
-        return false;
-    }
 }
-
+    
 class Map {
     int width, height;
     Node start, goal;
@@ -84,14 +70,14 @@ class Map {
     int map[][] = {
             { 8, 0, 1, 0, 1, 0, 1, 1, 1, 0 },
             { 1, 1, 1, 0, 1, 1, 1, 0, 1, 1 },
-            { 0, 1, 0, 1, 1, 1, 0, 1, 1, 5 },
-            { 0, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
+            { 0, 1, 0, 1, 1, 1, 0, 1, 1, 1 },
+            { 0, 1, 1, 1, 1, 1, 1, 1, 0, 5 },
             { 1, 0, 1, 1, 0, 1, 0, 1, 1, 1 },
             { 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
             { 1, 0, 1, 0, 1, 0, 1, 0, 1, 1 },
             { 1, 1, 1, 1, 1, 1, 0, 1, 1, 0 },
             { 1, 0, 0, 1, 0, 1, 0, 1, 0, 1 },
-            { 1, 1, 1, 1, 1, 1, 0, 0, 1, 1 }
+            { 1, 1, 1, 1, 1, 1, 0, 0, 1, 0 }
     };
 
     Map() {
